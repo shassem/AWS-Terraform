@@ -20,7 +20,7 @@ resource "aws_route_table" "prtable" {
 
   route {
     cidr_block = var.allinboundroute
-    gateway_id = aws_nat_gateway.MyNAT.id
+    nat_gateway_id = aws_nat_gateway.MyNAT.id
   }
 
   tags = {
