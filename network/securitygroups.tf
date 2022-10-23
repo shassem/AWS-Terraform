@@ -1,7 +1,7 @@
-resource "aws_security_group" "allow_ssh" {
+resource "aws_security_group" "allow_ssh" {       #Security group that allows ssh only
   name        = "allow_ssh"
   description = "Allowing SSH"
-  vpc_id      = module.network.vpc_id
+  vpc_id      = aws_vpc.myvpc.id
 
   ingress {
     description = "Allowing SSH"
@@ -23,10 +23,10 @@ resource "aws_security_group" "allow_ssh" {
   }
 }
 
-resource "aws_security_group" "allow_ssh3000" {
+resource "aws_security_group" "allow_ssh3000" {    #Security group that allows ssh and port 3000
   name        = "allow_ssh3000"
   description = "Allowing SSH and port 3000 from VPC CIDR only"
-  vpc_id      = module.network.vpc_id
+  vpc_id      = aws_vpc.myvpc.id
 
   ingress {
     description = "Allowing SSH"

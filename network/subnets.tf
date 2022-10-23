@@ -1,6 +1,6 @@
-#Applying: 2 public subnets, 2 private subnets
+# Applying: 2 public subnets, 2 private subnets
 
-#First Public Subnet
+# First Public Subnet
 resource "aws_subnet" "pub1" {    
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = var.public_1_CIDR
@@ -11,7 +11,7 @@ resource "aws_subnet" "pub1" {
   }
 }
 
-#Second Public Subnet
+# Second Public Subnet
 resource "aws_subnet" "pub2" {
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = var.public_2_CIDR
@@ -22,7 +22,7 @@ resource "aws_subnet" "pub2" {
   }
 }
 
-#First Private Subnet
+# First Private Subnet
 resource "aws_subnet" "pr1" {
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = var.private_1_CIDR
@@ -33,7 +33,7 @@ resource "aws_subnet" "pr1" {
   }
 }
 
-#Second Private Subnet
+# Second Private Subnet
 resource "aws_subnet" "pr2" {
   vpc_id     = aws_vpc.myvpc.id
   cidr_block = var.private_2_CIDR

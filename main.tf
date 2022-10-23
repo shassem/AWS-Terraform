@@ -1,3 +1,5 @@
+#Assigning the child modules / Connecting the variables
+
 module "network"{
     source = "./network"
     cidr=var.cidr

@@ -1,6 +1,6 @@
-#Gateways
+# Gateways
 
-#Internet Gateway
+# Internet Gateway
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.myvpc.id
 
@@ -9,7 +9,7 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
-#NAT Gateway
+# NAT Gateway
 resource "aws_nat_gateway" "MyNAT" {
   allocation_id = aws_eip.myeip.id
   subnet_id     = aws_subnet.pub1.id
@@ -19,7 +19,7 @@ resource "aws_nat_gateway" "MyNAT" {
   }
 }
 
-#Allocating Elastic IP
+# Allocating Elastic IP
 resource "aws_eip" "myeip" {
   vpc = true
 }

@@ -1,6 +1,6 @@
-#Applying route tables with their subnet associations (routes)
+# Applying route tables with their subnet associations (routes)
 
-#Public Routing Table
+# Public Routing Table
 resource "aws_route_table" "pubtable" {
   vpc_id = aws_vpc.myvpc.id
 
@@ -14,7 +14,7 @@ resource "aws_route_table" "pubtable" {
   }
 }
 
-#Private Routing Table
+# Private Routing Table
 resource "aws_route_table" "prtable" {
   vpc_id = aws_vpc.myvpc.id
 
@@ -28,7 +28,7 @@ resource "aws_route_table" "prtable" {
   }
 }
 
-#Public Routing - Subnet Associations
+# Public Routing - Subnet Associations
 resource "aws_route_table_association" "public-a" {
   subnet_id      = aws_subnet.pub1.id
   route_table_id = aws_route_table.pubtable.id
@@ -38,7 +38,7 @@ resource "aws_route_table_association" "public-b" {
   route_table_id = aws_route_table.pubtable.id
 }
 
-#Private Routing - Subnet Associations
+# Private Routing - Subnet Associations
 resource "aws_route_table_association" "private-a" {
   subnet_id      = aws_subnet.pr1.id
   route_table_id = aws_route_table.prtable.id
