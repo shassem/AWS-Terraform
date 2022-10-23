@@ -3,8 +3,8 @@
 #First Public Subnet
 resource "aws_subnet" "pub1" {    
   vpc_id     = aws_vpc.myvpc.id
-  cidr_block = "10.0.0.0/24"
-  availability_zone = "eu-central-1a"
+  cidr_block = var.public_1_CIDR
+  availability_zone = "${var.regionn}a"
 
   tags = {
     Name = "PubSub1"
@@ -14,8 +14,8 @@ resource "aws_subnet" "pub1" {
 #Second Public Subnet
 resource "aws_subnet" "pub2" {
   vpc_id     = aws_vpc.myvpc.id
-  cidr_block = "10.0.1.0/24"
-  availability_zone = "eu-central-1c"
+  cidr_block = var.public_2_CIDR
+  availability_zone = "${var.regionn}c"
 
   tags = {
     Name = "PubSub2"
@@ -25,8 +25,8 @@ resource "aws_subnet" "pub2" {
 #First Private Subnet
 resource "aws_subnet" "pr1" {
   vpc_id     = aws_vpc.myvpc.id
-  cidr_block = "10.0.2.0/24"
-  availability_zone = "eu-central-1a"
+  cidr_block = var.private_1_CIDR
+  availability_zone = "${var.regionn}a"
 
   tags = {
     Name = "PrSub1"
@@ -36,8 +36,8 @@ resource "aws_subnet" "pr1" {
 #Second Private Subnet
 resource "aws_subnet" "pr2" {
   vpc_id     = aws_vpc.myvpc.id
-  cidr_block = "10.0.3.0/24"
-  availability_zone = "eu-central-1c"
+  cidr_block = var.private_2_CIDR
+  availability_zone = "${var.regionn}c"
 
   tags = {
     Name = "PrSub2"

@@ -1,6 +1,6 @@
 #Authentication
 
 provider "aws" {
-  region = "eu-central-1"
+  region = var.regionn
   profile = "iti"
 }
